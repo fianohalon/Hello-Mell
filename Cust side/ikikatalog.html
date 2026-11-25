@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog | Hello Mell</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf5;
+    color: #5b4149;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    background: #fffaf5;
+    border-bottom: 1px solid #eadde0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #d88eaa;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #bd718f;
+}
+
+.register-btn {
+    background: #d88eaa;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.register-btn:hover {
+    background: #bd718f;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HEADER */
+.catalog-header {
+    padding: 60px 8% 35px;
+}
+
+.subtitle {
+    color: #bd718f;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.catalog-header h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.catalog-header p {
+    color: #88767b;
+    line-height: 1.7;
+}
+
+/* KATALOG */
+.catalog-section {
+    padding: 20px 8% 60px;
+}
+
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    width: 280px;
+    padding: 12px;
+    border: 1px solid #d9c2ca;
+    background: white;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #d88eaa;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 9px 16px;
+    background: white;
+    border: 1px solid #d9c2ca;
+    color: #5b4149;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #d88eaa;
+    color: white;
+    border-color: #d88eaa;
+}
+
+/* CARD */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 20px;
+}
+
+.catalog-card {
+    background: white;
+    border: 1px solid #eee2e4;
+}
+
+.catalog-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #88767b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #bd718f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.detail-btn {
+    display: inline-block;
+    background: #d88eaa;
+    color: white;
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+.detail-btn:hover {
+    background: #bd718f;
+}
+
+/* KONSULTASI */
+.konsultasi-banner {
+    margin-top: 45px;
+    padding: 25px;
+    background: #f8e9ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.konsultasi-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.konsultasi-text p {
+    color: #88767b;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 450px;
+}
+
+.konsultasi-btn {
+    background: #d88eaa;
+    color: white;
+    padding: 12px 18px;
+    white-space: nowrap;
+}
+
+.konsultasi-btn:hover {
+    background: #bd718f;
+}
+
+.empty-message {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    color: #88767b;
+}
+
+/* FOOTER */
+.footer {
+    background: #f8e8ed;
+    margin-top: 40px;
+    padding: 40px 8% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer h2,
+.footer h3 {
+    color: #b76e89;
+    margin-bottom: 15px;
+}
+
+.footer h2 {
+    font-size: 23px;
+}
+
+.footer h3 {
+    font-size: 16px;
+}
+
+.footer p,
+.footer a {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer a:hover {
+    color: #b76e89;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5cbd5;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #876c77;
+    font-size: 13px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-buttons {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .register-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .catalog-header {
+        padding: 40px 6% 25px;
+    }
+
+    .catalog-header h1 {
+        font-size: 32px;
+    }
+
+    .catalog-section {
+        padding: 20px 6% 40px;
+    }
+
+    .catalog-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-card img {
+        height: 300px;
+    }
+
+    .konsultasi-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        padding: 40px 6% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        Hello <span>Mell.</span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="ikibrandae.html">Beranda</a>
+        <a href="ikikatalog.html" class="active">Katalog</a>
+        <a href="ikidaftarharga.html">Daftar Harga</a>
+        <a href="profilewong.html">Portofolio Nail Artist</a>
+        <a href="cetadmin.html">Chat Admin</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="register-btn">Masuk</a>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<!-- HEADER KATALOG -->
+<section class="catalog-header">
+
+    <div class="subtitle">
+        HELLO MELL COLLECTION
+    </div>
+
+    <h1>Nail Art Catalog</h1>
+
+    <p>
+        Temukan inspirasi desain nail art yang sesuai
+        dengan gaya dan kepribadianmu.
+    </p>
+
+</section>
+
+<!-- KATALOG -->
+<section class="catalog-section">
+
+    <div class="catalog-controls">
+
+        <input
+            type="text"
+            class="search-box"
+            id="searchCatalog"
+            placeholder="Cari desain nail art..."
+        >
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="simple">Simple</button>
+            <button class="filter-btn" data-filter="elegant">Elegant</button>
+            <button class="filter-btn" data-filter="cute">Cute</button>
+            <button class="filter-btn" data-filter="bold">Bold</button>
+        </div>
+
+    </div>
+
+    <div class="catalog-grid" id="catalogGrid">
+
+        <!-- DESAIN 1 -->
+        <div class="catalog-card" data-category="simple" data-name="Milky Nude">
+            <img src="image/milky nude.jpg" alt="Milky Nude">
+
+            <div class="card-content">
+                <h3>Milky Nude</h3>
+                <p>Natural nude dengan tampilan minimalis dan lembut.</p>
+                <div class="price">Mulai Rp50.000</div>
+
+                <a href="ikidetailekatalog.html?design=milky nude" class="detail-btn">
+                    Lihat Detail
+                </a>
+            </div>
+        </div>
+
+        <!-- DESAIN 2 -->
+        <div class="catalog-card" data-category="cute" data-name="Pink Blossom">
+            <img src="image/pink blossom.jpg" alt="Pink Blossom">
+
+            <div class="card-content">
+                <h3>Pink Blossom</h3>
+                <p>Desain pink dengan sentuhan bunga yang manis.</p>
+                <div class="price">Mulai Rp65.000</div>
+
+                <a href="ikidetailekatalog.html?design=pink-blossom" class="detail-btn">
+                    Lihat Detail
+                </a>
+            </div>
+        </div>
+
+        <!-- DESAIN 3 -->
+        <div class="catalog-card" data-category="elegant" data-name="French Tip">
+            <img src="image/french tip.jpg" alt="French Tip">
+
+            <div class="card-content">
+                <h3>French Tip</h3>
+                <p>French manicure dengan sentuhan modern.</p>
+                <div class="price">Mulai Rp75.000</div>
+
+                <a href="ikidetailekatalog.html?design=french-chic" class="detail-btn">
+                    Lihat Detail
+                </a>
+            </div>
+        </div>
+
+        <!-- DESAIN 4 -->
+        <div class="catalog-card" data-category="cute" data-name="Sweet Ribbon">
+            <img src="image/sweet ribbon.jpg" alt="Sweet Ribbon">
+
+            <div class="card-content">
+                <h3>Sweet Ribbon</h3>
+                <p>Detail pita dengan nuansa cute dan manis.</p>
+                <div class="price">Mulai Rp80.000</div>
+
+                <a href="ikidetailekatalog.html?design=sweet-ribbon" class="detail-btn">
+                    Lihat Detail
+                </a>
+            </div>
+        </div>
+
+        <!-- DESAIN 5 -->
+        <div class="catalog-card" data-category="bold" data-name="Midnight Glam">
+            <img src="image/mignight glam.jpg" alt="Midnight Glam">
+
+            <div class="card-content">
+                <h3>Midnight Glam</h3>
+                <p>Desain gelap dengan detail dekorasi elegan.</p>
+                <div class="price">Mulai Rp90.000</div>
+
+                <a href="ikidetailekatalog.html?design=midnight-glam" class="detail-btn">
+                    Lihat Detail
+                </a>
+            </div>
+        </div>
+
+        <!-- DESAIN 6 -->
+        <div class="catalog-card" data-category="elegant" data-name="Pearl Elegance">
+            <img src="image/pearl glam.jpg" alt="Pearl Elegance">
+
+            <div class="card-content">
+                <h3>Pearl Elegance</h3>
+                <p>Desain dengan sentuhan dekorasi pearl.</p>
+                <div class="price">Mulai Rp100.000</div>
+
+                <a href="ikidetailekatalog.html?design=pearl-elegance" class="detail-btn">
+                    Lihat Detail
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PESAN KONSULTASI -->
+    <div class="konsultasi-banner">
+
+        <div class="konsultasi-text">
+            <h3>Punya referensi nail art sendiri?</h3>
+
+            <p>
+                Yuk, konsultasikan desain yang kamu inginkan
+                langsung kepada admin agar nail art impianmu
+                bisa diwujudkan!
+            </p>
+        </div>
+
+        <a href="chat-admin.html" class="konsultasi-btn">
+            Chat Admin
+        </a>
+
+    </div>
+
+    <div class="empty-message" id="emptyMessage">
+        Desain tidak ditemukan.
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h2>Hello Mell</h2>
+
+            <p>
+                Hello Mell menyediakan layanan nail art dengan berbagai
+                desain menarik untuk mempercantik kuku dan menunjang
+                penampilanmu.
+            </p>
+        </div>
+
+        <div class="footer-hours">
+            <h3>Jam Operasional</h3>
+            <p>Setiap Hari</p>
+            <p>09.00 - 18.00 WIB</p>
+        </div>
+
+        <div class="footer-address">
+            <h3>Alamat</h3>
+            <p>Alamat usaha Hello Mell</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Sosial Media</h3>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">WhatsApp</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Hello Mell. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".catalog-card");
+    const search = document.getElementById("searchCatalog");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    let category = "all";
+
+    function filterCatalog() {
+
+        let keyword = search.value.toLowerCase();
+        let count = 0;
+
+        cards.forEach(function(card) {
+
+            let name = card.dataset.name.toLowerCase();
+            let cardCategory = card.dataset.category;
+
+            let categoryMatch = category == "all" || cardCategory == category;
+            let searchMatch = name.includes(keyword);
+
+            if (categoryMatch && searchMatch) {
+                card.style.display = "block";
+                count++;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (count == 0) {
+            emptyMessage.style.display = "block";
+        } else {
+            emptyMessage.style.display = "none";
+        }
+
+    }
+
+    buttons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            category = button.dataset.filter;
+
+            filterCatalog();
+
+        });
+
+    });
+
+    search.addEventListener("input", filterCatalog);
+
+</script>
+
+</body>
+</html>

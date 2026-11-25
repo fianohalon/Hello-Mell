@@ -1,0 +1,285 @@
+
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf5;
+            color: #5b4149;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #fffaf5;
+            border-bottom: 1px solid #f0e3e5;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d88eaa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #bd718f;
+        }
+
+        .register-btn {
+            background-color: #d88eaa;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .register-btn:hover {
+            background-color: #bd718f;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+
+/* PORTOFOLIO */
+
+.portfolio-hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.portfolio-hero h1 {
+    color: #b96f8b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.portfolio-hero p {
+    color: #777;
+}
+
+/* ARTIST */
+
+.artist-section {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 35px;
+    align-items: start;
+    padding: 40px 7%;
+    border-bottom: 1px solid #f0dfe5;
+}
+
+.artist-profile {
+    text-align: center;
+}
+
+.artist-profile img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.artist-profile h2 {
+    color: #b96f8b;
+    margin: 15px 0 10px;
+}
+
+.artist-profile p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* HASIL KARYA */
+
+.artist-works h3 {
+    color: #b96f8b;
+    margin-bottom: 20px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.work-card {
+    background: #fff9fb;
+    border: 1px solid #f2dce5;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.work-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.work-card h4 {
+    color: #8c536a;
+    margin: 12px 8px 6px;
+}
+
+.work-card p {
+    color: #777;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.work-card span {
+    color: #b96f8b;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #f8e8ed;
+    color: #59434b;
+    margin-top: 80px;
+    padding: 50px 8% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 35px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer h2 {
+    font-size: 24px;
+    color: #b76e89;
+    margin-bottom: 15px;
+}
+
+.footer h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #b76e89;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    display: block;
+    color: black;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: #d98ca8;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5cbd5;
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #876c77;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .artist-section {
+        grid-template-columns: 1fr;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer {
+        padding: 40px 6% 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-hero h1 {
+        font-size: 26px;
+    }
+
+    .artist-section {
+        padding: 30px 5%;
+    }
+
+    .artist-profile img {
+        width: 160px;
+        height: 200px;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .work-card img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}

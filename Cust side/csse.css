@@ -1,0 +1,323 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf5;
+            color: #5b4149;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #fffaf5;
+            border-bottom: 1px solid #f0e3e5;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d88eaa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #bd718f;
+        }
+
+        .register-btn {
+            background-color: #d88eaa;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .register-btn:hover {
+            background-color: #bd718f;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+/* CONTENT */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+.page-title {
+    padding: 35px;
+    background: white;
+    margin-bottom: 35px;
+}
+
+.page-title h1 {
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+/* DAFTAR HARGA */
+.price-section {
+    margin-bottom: 45px;
+}
+
+.price-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* KARTU HARGA */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.price-card {
+    background: white;
+    padding: 25px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.price-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #88767b;
+}
+
+.price {
+    color: #bd718f;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.price small {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 11px;
+    color: #98858d;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* DETAIL HARGA */
+.service-price {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.service-price span {
+    font-size: 10px;
+    color: #88757e;
+    margin-bottom: 5px;
+}
+
+.service-price strong {
+    font-size: 22px;
+    color: #bd718f;
+}
+
+.service-price small {
+    font-size: 11px;
+    color: #88757e;
+}
+
+/* LINK SELENGKAPNYA */
+.more-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: #f8e9ef;
+    color: #bd718f;
+    font-size: 13px;
+}
+
+.more-link:hover {
+    background: #e9c1d0;
+}
+
+/* FOOTER */
+.footer {
+    background: #f8e8ed;
+    color: #59434b;
+    margin-top: 80px;
+    padding: 50px 8% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-container h2,
+.footer-container h3 {
+    color: #b76e89;
+    margin-bottom: 15px;
+}
+
+.footer-container h2 {
+    font-size: 24px;
+}
+
+.footer-container h3 {
+    font-size: 17px;
+}
+
+.footer-container p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.footer-container a {
+    display: block;
+    color: #59434b;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-container a:hover {
+    color: #b76e89;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5cbd5;
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #876c77;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-buttons {
+        margin-top: 15px;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    .page-title {
+        padding: 25px;
+    }
+
+    .page-title h1 {
+        font-size: 28px;
+    }
+
+    .price-section h2 {
+        font-size: 22px;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 40px 6% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}

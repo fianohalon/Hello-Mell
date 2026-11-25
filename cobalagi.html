@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-buttons" id="navButtons">
+    <a href="login.html">Masuk</a>
+</div>
+    <script>
+    let statusLogin = localStorage.getItem("statusLogin");
+    let navButtons = document.getElementById("navButtons");
+
+    if (statusLogin == "true") {
+        navButtons.innerHTML = '<a href="profilpengguna.html">Profil</a>';
+    } else {
+        navButtons.innerHTML = '<a href="login.html">Masuk</a>';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail Nail Art | Hello Mell</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf5;
+    color: #5b4149;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffaf5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #5b4149;
+}
+
+.logo span {
+    color: #d88eaa;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #5b4149;
+    font-size: 14px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #bd718f;
+}
+
+.nav-buttons a {
+    padding: 10px 20px;
+    background: #d88eaa;
+    color: white;
+    font-size: 14px;
+}
+
+.nav-buttons a:hover {
+    background: #bd718f;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #5b4149;
+}
+
+/* DETAIL */
+.detail-container {
+    padding: 50px 8% 80px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #88767b;
+    margin-bottom: 30px;
+}
+
+.breadcrumb a {
+    color: #bd718f;
+}
+
+/* BAGIAN DETAIL */
+.detail-content {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+/* FOTO */
+.product-gallery {
+    width: 100%;
+}
+
+.detail-main-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: #f8e9ef;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.thumbnail-list img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail-list img.active {
+    border-color: #d88eaa;
+}
+
+/* INFORMASI */
+.detail-info {
+    padding-top: 10px;
+}
+
+.detail-subtitle {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #bd718f;
+    margin-bottom: 15px;
+}
+
+.detail-info h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.detail-price {
+    color: #bd718f;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.detail-description {
+    color: #88767b;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.detail-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.design-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.design-tag {
+    padding: 10px 15px;
+    background: #f8e9ef;
+    color: #bd718f;
+    font-size: 14px;
+}
+
+.detail-notes {
+    background: #f8e9ef;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.detail-notes p {
+    color: #88767b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.booking-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: #d88eaa;
+    color: white;
+    font-weight: bold;
+}
+
+.booking-btn:hover {
+    background: #bd718f;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #bd718f;
+}
+
+/* FOOTER */
+.footer {
+    background: #f8e8ed;
+    color: #59434b;
+    padding: 50px 8% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    color: #b76e89;
+    margin-bottom: 15px;
+}
+
+.footer-section h2 {
+    font-size: 24px;
+}
+
+.footer-section h3 {
+    font-size: 17px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    display: block;
+    color: #59434b;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    color: #b76e89;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5cbd5;
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #876c77;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .detail-content {
+        grid-template-columns: 40% 1fr;
+        gap: 25px;
+    }
+
+    .detail-info h1 {
+        font-size: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-buttons {
+        margin-top: 15px;
+    }
+
+    .detail-container {
+        padding: 35px 6% 60px;
+    }
+
+    .detail-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .detail-info {
+        padding-top: 0;
+    }
+
+    .detail-info h1 {
+        font-size: 28px;
+    }
+
+    .detail-price {
+        font-size: 20px;
+    }
+
+    .footer {
+        padding: 40px 6% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">Hello <span>Mell.</span></div>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="ikibrandae.html">Beranda</a>
+        <a href="ikikatalog.html" class="active">Katalog</a>
+        <a href="ikidaftarharga.html">Daftar Harga</a>
+        <a href="profilewong.html">Portofolio Nail Artist</a>
+        <a href="cetadmin.html">Chat Admin</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="login.html">Masuk</a>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<!-- DETAIL DESAIN -->
+<main class="detail-container">
+
+    <div class="breadcrumb">
+        <a href="ikibrandae.html">Beranda</a> /
+        <a href="ikikatalog.html">Katalog</a> /
+        Detail Desain
+    </div>
+
+    <div class="detail-content">
+
+        <!-- GALERI FOTO -->
+        <div class="product-gallery">
+
+            <img
+                src="image/milky nude.jpg"
+                id="mainPhoto"
+                class="detail-main-photo"
+                alt="Nail Art"
+            >
+
+            <div class="thumbnail-list" id="thumbnailList"></div>
+
+        </div>
+
+        <!-- INFORMASI DESAIN -->
+        <div class="detail-info">
+
+            <p class="detail-subtitle">HELLO MELL COLLECTION</p>
+
+            <h1 id="designName">Milky Nude</h1>
+
+            <div class="detail-price" id="designPrice">
+                Mulai Rp50.000
+            </div>
+
+            <p class="detail-description" id="designDescription">
+                Desain nail art bernuansa nude dengan tampilan minimalis,
+                lembut, dan natural.
+            </p>
+
+            <h3>Detail Desain</h3>
+
+            <div class="design-tags" id="designTags"></div>
+
+            <div class="detail-notes">
+                <h3>Informasi Pemesanan</h3>
+                <p>
+                    Harga dapat menyesuaikan ukuran kuku, tingkat
+                    kerumitan desain, serta tambahan dekorasi yang dipilih.
+                    Pemesanan dilakukan melalui sistem booking
+                    setelah pelanggan login.
+                </p>
+            </div>
+
+            <a href="login.html" class="booking-btn">
+                Login untuk Booking
+            </a>
+
+            <a href="ikikatalog.html" class="back-btn">
+                ← Kembali ke Katalog
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>Hello Mell</h2>
+            <p>
+                Hello Mell menyediakan layanan nail art dengan berbagai
+                desain menarik untuk mempercantik kuku dan menunjang
+                penampilanmu.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Jam Operasional</h3>
+            <p>Setiap Hari</p>
+            <p>09.00 - 18.00 WIB</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Alamat</h3>
+            <p>Alamat usaha Hello Mell</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Sosial Media</h3>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">WhatsApp</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Hello Mell. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<script>
+
+/* MENU NAVBAR */
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+/* DATA DESAIN */
+const designs = {
+
+    "milky nude": {
+        name: "Milky Nude",
+        price: "Mulai Rp50.000",
+        description: "Desain nail art bernuansa nude dengan tampilan minimalis, lembut, dan natural. Cocok untuk penampilan sehari-hari maupun acara tertentu.",
+        tags: ["Minimalist", "Natural", "Nude"],
+        photos: [
+            "image/milky nude.jpg",
+            "image/milkynudee.jpg",
+            "image/milkynudeeee.jpg"
+        ]
+    },
+
+    "pink-blossom": {
+        name: "Pink Blossom",
+        price: "Mulai Rp65.000",
+        description: "Desain nail art bernuansa pink dengan dekorasi bunga yang memberikan tampilan manis dan lembut.",
+        tags: ["Floral", "Pink", "Cute"],
+        photos: [
+            "image/pink blossom.jpg",
+            "image/pinkkblosom.jpg",
+            "image/pinkkkblosom.jpg"
+        ]
+    },
+
+    "french-chic": {
+        name: "French Tip",
+        price: "Mulai Rp75.000",
+        description: "French manicure dengan tampilan modern dan elegan, cocok untuk berbagai kesempatan.",
+        tags: ["French", "Elegant", "Classic"],
+        photos: [
+            "image/french tip.jpg",
+            "image/french tip 2.jpg",
+            "image/french tip 3.jpg"
+        ]
+    },
+
+    "sweet-ribbon": {
+        name: "Sweet Ribbon",
+        price: "Mulai Rp80.000",
+        description: "Desain nail art dengan dekorasi pita yang menghadirkan tampilan cute dan manis.",
+        tags: ["Ribbon", "Cute", "Decorative"],
+        photos: [
+            "image/sweet ribbon.jpg",
+            "image/sweet ribbon 2.jpg",
+            "image/sweet ribbon 3.jpg"
+        ]
+    },
+
+    "midnight-glam": {
+        name: "Midnight Glam",
+        price: "Mulai Rp90.000",
+        description: "Desain bernuansa gelap dengan detail dekoratif yang memberikan kesan bold dan menarik.",
+        tags: ["Dark", "Bold", "Glam"],
+        photos: [
+            "image/mignight glam.jpg",
+            "image/midnight glam 2.jpg",
+            "image/midnight glam 3.jpg"
+        ]
+    },
+
+    "pearl-elegance": {
+        name: "Pearl Elegance",
+        price: "Mulai Rp100.000",
+        description: "Desain nail art elegan dengan dekorasi pearl untuk memberikan detail yang menarik.",
+        tags: ["Pearl", "Elegant", "Luxury"],
+        photos: [
+            "image/pearl glam.jpg",
+            "image/pearl glam 2.jpg",
+            "image/pearl glam 3.jpg"
+        ]
+    }
+
+};
+
+/* MENGAMBIL DESAIN DARI URL */
+const params = new URLSearchParams(window.location.search);
+const designKey = params.get("design");
+const design = designs[designKey] || designs["milky nude"];
+
+/* MENAMPILKAN INFORMASI */
+document.getElementById("designName").textContent = design.name;
+document.getElementById("designPrice").textContent = design.price;
+document.getElementById("designDescription").textContent = design.description;
+
+/* MENAMPILKAN TAG */
+const designTags = document.getElementById("designTags");
+
+design.tags.forEach(function(tag) {
+    designTags.innerHTML += `<span class="design-tag">${tag}</span>`;
+});
+
+/* MENAMPILKAN FOTO */
+const mainPhoto = document.getElementById("mainPhoto");
+const thumbnailList = document.getElementById("thumbnailList");
+
+mainPhoto.src = design.photos[0];
+mainPhoto.alt = design.name;
+
+design.photos.forEach(function(photo, index) {
+
+    thumbnailList.innerHTML += `
+        <img src="${photo}" 
+             class="thumbnail ${index == 0 ? 'active' : ''}"
+             onclick="changePhoto(this)"
+             alt="Foto ${index + 1}">
+    `;
+
+});
+
+/* MENGGANTI FOTO UTAMA */
+function changePhoto(thumbnail) {
+
+    mainPhoto.src = thumbnail.src;
+
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(function(img) {
+        img.classList.remove("active");
+    });
+
+    thumbnail.classList.add("active");
+}
+
+</script>
+
+</body>
+</html>

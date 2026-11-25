@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Mell | Nail Art Studio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf5;
+            color: #5b4149;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #fffaf5;
+            border-bottom: 1px solid #f0e3e5;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d88eaa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #bd718f;
+        }
+
+        .register-btn {
+            background-color: #d88eaa;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .register-btn:hover {
+            background-color: #bd718f;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 65px 8%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-subtitle {
+            color: #bd718f;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #d88eaa;
+        }
+
+        .hero-description {
+            color: #88767b;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            max-width: 450px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .primary-btn {
+            background-color: #d88eaa;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: #bd718f;
+        }
+
+        .secondary-btn {
+            border: 1px solid #d88eaa;
+            color: #bd718f;
+        }
+
+        .secondary-btn:hover {
+            background-color: #f8e9ef;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .photo-caption {
+            font-size: 12px;
+            color: #88767b;
+            margin-top: 10px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #f8e8ed;
+            padding: 45px 8% 20px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .footer h2,
+        .footer h3 {
+            color: #b76e89;
+            margin-bottom: 15px;
+        }
+
+        .footer h2 {
+            font-size: 23px;
+        }
+
+        .footer h3 {
+            font-size: 16px;
+        }
+
+        .footer p,
+        .footer a {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            display: block;
+            color: #59434b;
+            margin-bottom: 5px;
+        }
+
+        .footer a:hover {
+            color: #d98ca8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #e5cbd5;
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #876c77;
+            font-size: 13px;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 50px 5%;
+                gap: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-image img {
+                height: 350px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                padding-top: 20px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-buttons {
+                margin-left: auto;
+                margin-right: 15px;
+            }
+
+            .register-btn {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                padding: 35px 6%;
+            }
+
+            .hero-image img {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-wrap: wrap;
+            }
+
+            .about-section {
+                padding: 45px 6%;
+            }
+
+            .about-content h2 {
+                font-size: 28px;
+            }
+
+            .footer {
+                padding: 40px 6% 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            Hello <span>Mell.</span>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="ikibrandae.html" class="active">Beranda</a>
+            <a href="ikikatalog.html">Katalog</a>
+            <a href="ikidaftarharga.html">Daftar Harga</a>
+            <a href="profilewong.html">Portofolio Nail Artist</a>
+            <a href="cetadmin.html">Chat Admin</a>
+        </nav>
+
+        <div class="nav-buttons">
+    <a href="login.html" class="register-btn">Masuk</a>
+</div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-subtitle">
+                WELCOME TO HELLO MELL
+            </p>
+
+            <h1>
+                A Little Art<br>
+                For Your <span>Nails.</span>
+            </h1>
+
+            <p class="hero-description">
+                Temukan desain nail art yang sesuai dengan gaya dan
+                kepribadianmu. Saatnya memberikan sentuhan cantik
+                pada setiap detail kukumu.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="ikikatalog.html" class="primary-btn">
+                    Lihat Katalog
+                </a>
+
+                <a href="ikidaftarharga.html" class="secondary-btn">
+                    Lihat Harga
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="image/lucuu.jpg" alt="Nail art Hello Mell">
+
+            <p class="photo-caption">
+                A design made to match your style.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h2>Hello Mell</h2>
+
+                <p>
+                    Hello Mell menyediakan layanan nail art dengan
+                    berbagai desain menarik untuk mempercantik kuku
+                    dan menunjang penampilanmu.
+                </p>
+            </div>
+
+            <div class="footer-hours">
+                <h3>Jam Operasional</h3>
+                <p>Setiap Hari</p>
+                <p>09.00 - 18.00 WIB</p>
+            </div>
+
+            <div class="footer-address">
+                <h3>Alamat</h3>
+                <p>Alamat usaha Hello Mell</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Sosial Media</h3>
+
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">WhatsApp</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hello Mell. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+  <script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    let statusLogin = localStorage.getItem("statusLogin");
+    let navButtons = document.getElementById("navButtons");
+
+    if (statusLogin == "true") {
+        navButtons.innerHTML = '<a href="profilpengguna.html" class="register-btn">Profil</a>';
+    } else {
+        navButtons.innerHTML = '<a href="login.html" class="register-btn">Masuk</a>';
+    }
+</script>
+
+</body>
+</html>
