@@ -1,1 +1,1 @@
-https://github.com/fianohalon/Hello-Mell.git
+ https://fianohalon.github.io/Hello-Mell/
