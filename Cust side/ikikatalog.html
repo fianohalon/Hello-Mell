@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -195,6 +196,22 @@ a {
 }
 
 .detail-btn:hover {
+    background: #bd718f;
+}
+
+/* TOMBOL LIHAT SELENGKAPNYA */
+.show-more {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    background: #d88eaa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.show-more:hover {
     background: #bd718f;
 }
 
@@ -404,7 +421,7 @@ a {
         <a href="cetadmin.html">Chat Admin</a>
     </nav>
 
-    <div class="nav-buttons">
+    <div class="nav-buttons" id="navButtons">
         <a href="login.html" class="register-btn">Masuk</a>
     </div>
 
@@ -455,101 +472,147 @@ a {
         <!-- DESAIN 1 -->
         <div class="catalog-card" data-category="simple" data-name="Milky Nude">
             <img src="image/gambar pjbl/milky nude.jpg" alt="Milky Nude">
-
             <div class="card-content">
                 <h3>Milky Nude</h3>
                 <p>Natural nude dengan tampilan minimalis dan lembut.</p>
                 <div class="price">Mulai Rp50.000</div>
-
-                <a href="ikidetailekatalog.html?design=milky nude" class="detail-btn">
-                    Lihat Detail
-                </a>
+                <a href="ikidetailekatalog.html?design=milky nude" class="detail-btn">Lihat Detail</a>
             </div>
         </div>
 
         <!-- DESAIN 2 -->
         <div class="catalog-card" data-category="cute" data-name="Pink Blossom">
             <img src="image/gambar pjbl/pink blossom.jpg" alt="Pink Blossom">
-
             <div class="card-content">
                 <h3>Pink Blossom</h3>
                 <p>Desain pink dengan sentuhan bunga yang manis.</p>
                 <div class="price">Mulai Rp65.000</div>
-
-                <a href="ikidetailekatalog.html?design=pink-blossom" class="detail-btn">
-                    Lihat Detail
-                </a>
+                <a href="ikidetailekatalog.html?design=pink-blossom" class="detail-btn">Lihat Detail</a>
             </div>
         </div>
 
         <!-- DESAIN 3 -->
         <div class="catalog-card" data-category="elegant" data-name="French Tip">
             <img src="image/gambar pjbl/french tip.jpg" alt="French Tip">
-
             <div class="card-content">
                 <h3>French Tip</h3>
                 <p>French manicure dengan sentuhan modern.</p>
                 <div class="price">Mulai Rp75.000</div>
-
-                <a href="ikidetailekatalog.html?design=french-chic" class="detail-btn">
-                    Lihat Detail
-                </a>
+                <a href="ikidetailekatalog.html?design=french-chic" class="detail-btn">Lihat Detail</a>
             </div>
         </div>
 
         <!-- DESAIN 4 -->
         <div class="catalog-card" data-category="cute" data-name="Sweet Ribbon">
             <img src="image/gambar pjbl/sweet ribbon.jpg" alt="Sweet Ribbon">
-
             <div class="card-content">
                 <h3>Sweet Ribbon</h3>
                 <p>Detail pita dengan nuansa cute dan manis.</p>
                 <div class="price">Mulai Rp80.000</div>
-
-                <a href="ikidetailekatalog.html?design=sweet-ribbon" class="detail-btn">
-                    Lihat Detail
-                </a>
+                <a href="ikidetailekatalog.html?design=sweet-ribbon" class="detail-btn">Lihat Detail</a>
             </div>
         </div>
 
         <!-- DESAIN 5 -->
         <div class="catalog-card" data-category="bold" data-name="Midnight Glam">
             <img src="image/gambar pjbl/midnight glam.jpg" alt="Midnight Glam">
-
             <div class="card-content">
                 <h3>Midnight Glam</h3>
                 <p>Desain gelap dengan detail dekorasi elegan.</p>
                 <div class="price">Mulai Rp90.000</div>
-
-                <a href="ikidetailekatalog.html?design=midnight-glam" class="detail-btn">
-                    Lihat Detail
-                </a>
+                <a href="ikidetailekatalog.html?design=midnight-glam" class="detail-btn">Lihat Detail</a>
             </div>
         </div>
 
         <!-- DESAIN 6 -->
         <div class="catalog-card" data-category="elegant" data-name="Pearl Elegance">
             <img src="image/gambar pjbl/pearl glam.jpg" alt="Pearl Elegance">
-
             <div class="card-content">
                 <h3>Pearl Elegance</h3>
                 <p>Desain dengan sentuhan dekorasi pearl.</p>
                 <div class="price">Mulai Rp100.000</div>
+                <a href="ikidetailekatalog.html?design=pearl-elegance" class="detail-btn">Lihat Detail</a>
+            </div>
+        </div>
 
-                <a href="ikidetailekatalog.html?design=pearl-elegance" class="detail-btn">
-                    Lihat Detail
-                </a>
+        <!-- DESAIN 7 -->
+        <div class="catalog-card" data-category="cute" data-name="Cherry Blossom">
+            <img src="image/gambar pjbl/cherry blossom.jpg" alt="Cherry Blossom">
+            <div class="card-content">
+                <h3>Cherry Blossom</h3>
+                <p>Desain bunga sakura dengan warna pink lembut.</p>
+                <div class="price">Mulai Rp85.000</div>
+                <a href="ikidetailekatalog.html?design=cherry-blossom" class="detail-btn">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- DESAIN 8 -->
+        <div class="catalog-card" data-category="elegant" data-name="Lavender Dream">
+            <img src="image/gambar pjbl/lavender dream.jpg" alt="Lavender Dream">
+            <div class="card-content">
+                <h3>Lavender Dream</h3>
+                <p>Nuansa ungu lavender dengan tampilan elegan.</p>
+                <div class="price">Mulai Rp90.000</div>
+                <a href="ikidetailekatalog.html?design=lavender-dream" class="detail-btn">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- DESAIN 9 -->
+        <div class="catalog-card" data-category="simple" data-name="Ocean Pearl">
+            <img src="image/gambar pjbl/ocean pearl.jpg" alt="Ocean Pearl">
+            <div class="card-content">
+                <h3>Ocean Pearl</h3>
+                <p>Warna biru laut dengan sentuhan dekorasi pearl.</p>
+                <div class="price">Mulai Rp95.000</div>
+                <a href="ikidetailekatalog.html?design=ocean-pearl" class="detail-btn">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- DESAIN 10 -->
+        <div class="catalog-card" data-category="bold" data-name="Red Velvet">
+            <img src="image/gambar pjbl/red velvet.jpg" alt="Red Velvet">
+            <div class="card-content">
+                <h3>Red Velvet</h3>
+                <p>Warna merah dengan tampilan berani dan mewah.</p>
+                <div class="price">Mulai Rp100.000</div>
+                <a href="ikidetailekatalog.html?design=red-velvet" class="detail-btn">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- DESAIN 11 -->
+        <div class="catalog-card" data-category="cute" data-name="Daisy Garden">
+            <img src="image/gambar pjbl/daisy garden.jpg" alt="Daisy Garden">
+            <div class="card-content">
+                <h3>Daisy Garden</h3>
+                <p>Hiasan bunga daisy dengan warna cerah.</p>
+                <div class="price">Mulai Rp85.000</div>
+                <a href="ikidetailekatalog.html?design=daisy-garden" class="detail-btn">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- DESAIN 12 -->
+        <div class="catalog-card" data-category="bold" data-name="Chrome Silver">
+            <img src="image/gambar pjbl/chrome silver.jpg" alt="Chrome Silver">
+            <div class="card-content">
+                <h3>Chrome Silver</h3>
+                <p>Desain silver dengan efek chrome yang modern.</p>
+                <div class="price">Mulai Rp110.000</div>
+                <a href="ikidetailekatalog.html?design=chrome-silver" class="detail-btn">Lihat Detail</a>
             </div>
         </div>
 
     </div>
+
+    <!-- TOMBOL LIHAT SELENGKAPNYA -->
+    <button class="show-more" id="showMoreBtn" type="button">
+        Lihat Selengkapnya
+    </button>
 
     <!-- PESAN KONSULTASI -->
     <div class="konsultasi-banner">
 
         <div class="konsultasi-text">
             <h3>Punya referensi nail art sendiri?</h3>
-
             <p>
                 Yuk, konsultasikan desain yang kamu inginkan
                 langsung kepada admin agar nail art impianmu
@@ -557,7 +620,7 @@ a {
             </p>
         </div>
 
-        <a href="chat-admin.html" class="konsultasi-btn">
+        <a href="cetadmin.html" class="konsultasi-btn">
             Chat Admin
         </a>
 
@@ -576,7 +639,6 @@ a {
 
         <div class="footer-about">
             <h2>Hello Mell</h2>
-
             <p>
                 Hello Mell menyediakan layanan nail art dengan berbagai
                 desain menarik untuk mempercantik kuku dan menunjang
@@ -613,66 +675,104 @@ a {
 <!-- JAVASCRIPT -->
 <script>
 
-    function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("show");
-    }
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
 
-    const buttons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".catalog-card");
-    const search = document.getElementById("searchCatalog");
-    const emptyMessage = document.getElementById("emptyMessage");
+/* FILTER DAN PENCARIAN */
+const buttons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".catalog-card");
+const search = document.getElementById("searchCatalog");
+const emptyMessage = document.getElementById("emptyMessage");
+const showMoreBtn = document.getElementById("showMoreBtn");
 
-    let category = "all";
+let category = "all";
+let showAll = false;
 
-    function filterCatalog() {
+function filterCatalog() {
 
-        let keyword = search.value.toLowerCase();
-        let count = 0;
+    let keyword = search.value.toLowerCase();
+    let count = 0;
+    let hasFilter = keyword != "" || category != "all";
 
-        cards.forEach(function(card) {
+    cards.forEach(function(card, index) {
 
-            let name = card.dataset.name.toLowerCase();
-            let cardCategory = card.dataset.category;
+        let name = card.dataset.name.toLowerCase();
+        let cardCategory = card.dataset.category;
 
-            let categoryMatch = category == "all" || cardCategory == category;
-            let searchMatch = name.includes(keyword);
+        let categoryMatch = category == "all" || cardCategory == category;
+        let searchMatch = name.includes(keyword);
 
-            if (categoryMatch && searchMatch) {
-                card.style.display = "block";
-                count++;
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-        if (count == 0) {
-            emptyMessage.style.display = "block";
+        if (categoryMatch && searchMatch && (showAll || hasFilter || index < 6)) {
+            card.style.display = "block";
+            count++;
         } else {
-            emptyMessage.style.display = "none";
+            card.style.display = "none";
         }
-
-    }
-
-    buttons.forEach(function(button) {
-
-        button.addEventListener("click", function() {
-
-            buttons.forEach(function(btn) {
-                btn.classList.remove("active");
-            });
-
-            button.classList.add("active");
-
-            category = button.dataset.filter;
-
-            filterCatalog();
-
-        });
 
     });
 
-    search.addEventListener("input", filterCatalog);
+    if (count == 0) {
+        emptyMessage.style.display = "block";
+    } else {
+        emptyMessage.style.display = "none";
+    }
+
+    if (hasFilter) {
+        showMoreBtn.style.display = "none";
+    } else {
+        showMoreBtn.style.display = "block";
+    }
+
+    if (showAll) {
+        showMoreBtn.textContent = "Sembunyikan";
+    } else {
+        showMoreBtn.textContent = "Lihat Selengkapnya";
+    }
+
+}
+
+/* TOMBOL KATEGORI */
+buttons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        buttons.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        category = button.dataset.filter;
+
+        filterCatalog();
+
+    });
+
+});
+
+/* PENCARIAN */
+search.addEventListener("input", filterCatalog);
+
+/* LIHAT SELENGKAPNYA */
+showMoreBtn.addEventListener("click", function() {
+
+    showAll = !showAll;
+    filterCatalog();
+
+});
+
+/* STATUS LOGIN */
+let statusLogin = localStorage.getItem("statusLogin");
+let navButtons = document.getElementById("navButtons");
+
+if (statusLogin == "true") {
+    navButtons.innerHTML = '<a href="profilpengguna.html" class="register-btn">Profil</a>';
+} else {
+    navButtons.innerHTML = '<a href="login.html" class="register-btn">Masuk</a>';
+}
+
+/* TAMPILKAN 6 DESAIN PERTAMA */
+filterCatalog();
 
 </script>
 

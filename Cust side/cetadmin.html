@@ -5,26 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Admin | Hello Mell</title>
+
     <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #5b4149;
-    background: #fffaf5;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* NAVBAR */
-   * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -32,13 +15,8 @@ a {
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #fffaf5;
+            background: #fffaf5;
             color: #5b4149;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
         }
 
         a {
@@ -52,7 +30,7 @@ a {
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: #fffaf5;
+            background: #fffaf5;
             border-bottom: 1px solid #f0e3e5;
         }
 
@@ -80,14 +58,10 @@ a {
         }
 
         .register-btn {
-            background-color: #d88eaa;
+            background: #d88eaa;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-        }
-
-        .register-btn:hover {
-            background-color: #bd718f;
         }
 
         .menu-btn {
@@ -98,246 +72,218 @@ a {
             cursor: pointer;
         }
 
-/* CHAT CONTAINER */
+        /* CHAT */
+        .chat-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-.chat-container {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
+        .chat-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+        }
 
-.chat-container h2 {
-    color: #b96f8b;
-    margin-bottom: 10px;
-}
+        .staff-section,
+        .room-section {
+            background: white;
+            border: 1px solid #f0dfe5;
+            border-radius: 12px;
+        }
 
-.chat-description {
-    color: #777;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
+        .staff-section {
+            padding: 20px;
+        }
 
-.chat-content {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 20px;
-}
+        .staff-section h3 {
+            color: #b96f8b;
+            margin-bottom: 20px;
+        }
 
-/* BAGIAN ADMIN DAN STAFF */
+        .staff-box {
+            background: #fff9fb;
+            border: 1px solid #f2dce5;
+            border-radius: 8px;
+            padding: 20px 10px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
 
-.staff-section {
-    background: white;
-    border: 1px solid #f0dfe5;
-    border-radius: 12px;
-    padding: 20px;
-}
+        .staff-info {
+            margin-top: 15px;
+            color: #888;
+            font-size: 13px;
+            line-height: 1.6;
+        }
 
-.staff-section h3 {
-    color: #b96f8b;
-    margin-bottom: 20px;
-}
+        /* ROOM CHAT */
+        .room-section {
+            overflow: hidden;
+        }
 
-.staff-box {
-    background: #fff9fb;
-    border: 1px solid #f2dce5;
-    border-radius: 8px;
-    padding: 20px 10px;
-    text-align: center;
-    color: #888;
-    font-size: 13px;
-}
+        .room-header {
+            background: #f8e8ed;
+            padding: 20px;
+        }
 
-.staff-info {
-    margin-top: 15px;
-    color: #888;
-    font-size: 13px;
-    line-height: 1.6;
-}
+        .room-header h3 {
+            color: #b96f8b;
+            margin-bottom: 5px;
+        }
 
-/* ROOM CHAT */
+        .room-header p {
+            color: #777;
+            font-size: 13px;
+        }
 
-.room-section {
-    background: white;
-    border: 1px solid #f0dfe5;
-    border-radius: 5px;
-    overflow: hidden;
-}
+        .chat-room {
+            height: 470px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-.room-header {
-    background: #f8e8ed;
-    padding: 20px;
-}
+        .chat-notice {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
-.room-header h3 {
-    color: #b96f8b;
-    margin-bottom: 5px;
-}
+        .chat-notice a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: #d88eaa;
+            color: white;
+            border-radius: 20px;
+        }
 
-.room-header p {
-    color: #777;
-    font-size: 13px;
-}
+        .chat-input {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            border-top: 1px solid #f0dfe5;
+        }
 
-.chat-room {
-    height: 470px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #e5cbd5;
+            border-radius: 20px;
+        }
 
-.chat-notice {
-    text-align: center;
-    color: #777;
-    font-size: 14px;
-    line-height: 1.7;
-}
+        .chat-input button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #d88eaa;
+            color: white;
+            cursor: pointer;
+        }
 
-.chat-notice a {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 20px;
-    background: #d88eaa;
-    color: white;
-    border-radius: 20px;
-}
+        .chat-input input:disabled,
+        .chat-input button:disabled {
+            background: #eee;
+            cursor: not-allowed;
+        }
 
-.chat-input {
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    border-top: 1px solid #f0dfe5;
-}
+        /* FOOTER */
+        .footer {
+            background: #f8e8ed;
+            color: #59434b;
+            margin-top: 80px;
+            padding: 50px 8% 20px;
+        }
 
-.chat-input input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #e5cbd5;
-    border-radius: 20px;
-}
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.chat-input button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background: #d88eaa;
-    color: white;
-}
+        .footer h2,
+        .footer h3 {
+            color: #b76e89;
+            margin-bottom: 15px;
+        }
 
-.chat-input input:disabled {
-    background: #f5f5f5;
-}
+        .footer p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
 
-.chat-input button:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-}
+        .footer-bottom {
+            border-top: 1px solid #e5cbd5;
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+        }
 
-/* FOOTER */
+        .footer-bottom p {
+            font-size: 13px;
+        }
 
-.footer {
-    background: #f8e8ed;
-    color: #59434b;
-    margin-top: 80px;
-    padding: 50px 8% 20px;
-}
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .chat-content {
+                grid-template-columns: 1fr 2fr;
+            }
 
-.footer-container {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 35px;
-    max-width: 1200px;
-    margin: auto;
-}
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
 
-.footer h2, .footer h3 {
-    color: #b76e89;
-    margin-bottom: 15px;
-}
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
 
-.footer p {
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 8px;
-}
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 20px 0;
+            }
 
-.footer a {
-    color: black;
-}
+            .nav-links.show {
+                display: flex;
+            }
 
-.footer a:hover {
-    color: #d98ca8;
-}
+            .menu-btn {
+                display: block;
+            }
 
-.footer-bottom {
-    border-top: 1px solid #e5cbd5;
-    text-align: center;
-    margin-top: 35px;
-    padding-top: 20px;
-}
+            .chat-content {
+                grid-template-columns: 1fr;
+            }
 
-.footer-bottom p {
-    font-size: 13px;
-}
+            .chat-room {
+                height: 300px;
+            }
 
-/* RESPONSIVE */
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
 
-@media (max-width: 900px) {
-    .chat-content {
-        grid-template-columns: 1fr 2fr;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background: #fffaf5;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .nav-buttons {  
-        display: none;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .chat-content {
-        grid-template-columns: 1fr;
-    }
-
-    .chat-room {
-        height: 300px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-
-    .footer {
-        padding: 40px 6% 20px;
-    }
-}
-</style>
+            .footer {
+                padding: 40px 6% 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
- <header class="navbar">
+    <!-- NAVBAR -->
+    <header class="navbar">
 
         <div class="logo">
             Hello <span>Mell.</span>
@@ -351,99 +297,181 @@ a {
             <a href="cetadmin.html" class="active">Chat Admin</a>
         </nav>
 
-        <div class="nav-buttons">
+        <div class="nav-buttons" id="navButtons">
             <a href="login.html" class="register-btn">Masuk</a>
         </div>
 
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     </header>
-<!-- HALAMAN CHAT -->
-<main class="chat-container">
 
-    <div class="chat-content">
+    <!-- CHAT -->
+    <main class="chat-container">
 
-        <!-- BAGIAN KIRI -->
-        <div class="staff-section">
-            <h3>Admin & Staff</h3>
+        <div class="chat-content">
 
-            <div class="staff-box">
-                <p>Belum ada petugas yang menangani.</p>
-            </div>
+            <!-- ADMIN DAN STAFF -->
+            <div class="staff-section">
 
-            <div class="staff-info">
-                <p>Admin dan staff akan muncul setelah pelanggan login.</p>
-            </div>
-        </div>
+                <h3>Admin & Staff</h3>
 
-        <!-- BAGIAN KANAN -->
-        <div class="room-section">
-
-            <div class="room-header">
-                <h3>Room Chat</h3>
-                <p>Customer Service Hello Mell</p>
-            </div>
-
-            <div class="chat-room">
-                <div class="chat-notice">
-                    <p>Silakan login terlebih dahulu untuk menggunakan fitur chat.</p>
-                    <a href="login.html">Login Sekarang</a>
+                <div class="staff-box" id="staffBox">
+                    <p>Admin dan staff akan muncul setelah pelanggan login.</p>
                 </div>
+
+                <div class="staff-info">
+                    <p id="staffInfo">
+                        Silakan login untuk melihat petugas yang tersedia.
+                    </p>
+                </div>
+
             </div>
 
-            <div class="chat-input">
-                <input type="text" placeholder="Ketik pesan..." disabled>
-                <button disabled>Kirim</button>
+            <!-- ROOM CHAT -->
+            <div class="room-section">
+
+                <div class="room-header">
+                    <h3>Room Chat</h3>
+                    <p>Customer Service Hello Mell</p>
+                </div>
+
+                <div class="chat-room" id="chatRoom">
+
+                    <div class="chat-notice" id="chatNotice">
+                        <p>Silakan login terlebih dahulu untuk menggunakan fitur chat.</p>
+                        <a href="login.html">Login Sekarang</a>
+                    </div>
+
+                </div>
+
+                <div class="chat-input">
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Ketik pesan..."
+                        disabled
+                    >
+
+                    <button id="sendButton" disabled>
+                        Kirim
+                    </button>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-</main>
+    </main>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-container">
+    <!-- FOOTER -->
+    <footer class="footer">
 
-        <div class="footer-about">
-            <h2>Hello Mell</h2>
-            <p>
-                Hello Mell menyediakan layanan nail art
-                dengan berbagai desain menarik untuk
-                mempercantik kuku.
-            </p>
+        <div class="footer-container">
+
+            <div>
+                <h2>Hello Mell</h2>
+                <p>
+                    Hello Mell menyediakan layanan nail art
+                    dengan berbagai desain menarik untuk
+                    mempercantik kuku.
+                </p>
+            </div>
+
+            <div>
+                <h3>Jam Operasional</h3>
+                <p>Setiap Hari</p>
+                <p>09.00 - 18.00 WIB</p>
+            </div>
+
+            <div>
+                <h3>Alamat</h3>
+                <p>Alamat usaha Hello Mell</p>
+            </div>
+
+            <div>
+                <h3>Sosial Media</h3>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">TikTok</a></p>
+                <p><a href="#">WhatsApp</a></p>
+            </div>
+
         </div>
 
-        <div class="footer-hours">
-            <h3>Jam Operasional</h3>
-            <p>Setiap Hari</p>
-            <p>09.00 - 18.00 WIB</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hello Mell. All Rights Reserved.</p>
         </div>
 
-        <div class="footer-address">
-            <h3>Alamat</h3>
-            <p>Alamat usaha Hello Mell</p>
-        </div>
+    </footer>
 
-        <div class="footer-social">
-            <h3>Sosial Media</h3>
-            <p><a href="#">Instagram</a></p>
-            <p><a href="#">TikTok</a></p>
-            <p><a href="#">WhatsApp</a></p>
-        </div>
+    <script>
 
-    </div>
+        /* MENU NAVBAR */
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Hello Mell. All Rights Reserved.</p>
-    </div>
-</footer>
+        /* STATUS LOGIN */
+        let statusLogin = localStorage.getItem("statusLogin");
+        let navButtons = document.getElementById("navButtons");
 
-<script>
-    function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("show");
-    }
-</script>
+        if (statusLogin == "true") {
+
+            navButtons.innerHTML =
+                '<a href="profilpengguna.html" class="register-btn">Profil</a>';
+
+            /* MEMBUKA CHAT */
+            document.getElementById("chatNotice").style.display = "none";
+
+            document.getElementById("messageInput").disabled = false;
+            document.getElementById("sendButton").disabled = false;
+
+            document.getElementById("staffBox").innerHTML =
+                "<p>Belum ada petugas yang menangani.</p>";
+
+            document.getElementById("staffInfo").textContent =
+                "Admin dan staff akan muncul ketika tersedia.";
+
+        } else {
+
+            navButtons.innerHTML =
+                '<a href="login.html" class="register-btn">Masuk</a>';
+
+        }
+
+        /* KIRIM PESAN SIMULASI */
+        document.getElementById("sendButton").addEventListener("click", function() {
+
+            let messageInput = document.getElementById("messageInput");
+            let message = messageInput.value.trim();
+
+            if (message == "") {
+                return;
+            }
+
+            let chatRoom = document.getElementById("chatRoom");
+
+            let newMessage = document.createElement("p");
+            newMessage.textContent = message;
+            newMessage.style.background = "#f8e8ed";
+            newMessage.style.padding = "10px";
+            newMessage.style.borderRadius = "10px";
+            newMessage.style.marginBottom = "10px";
+            newMessage.style.maxWidth = "80%";
+            newMessage.style.alignSelf = "flex-end";
+
+            chatRoom.style.display = "flex";
+            chatRoom.style.flexDirection = "column";
+            chatRoom.style.alignItems = "flex-end";
+            chatRoom.style.justifyContent = "flex-start";
+            chatRoom.style.overflowY = "auto";
+
+            chatRoom.appendChild(newMessage);
+
+            messageInput.value = "";
+
+        });
+
+    </script>
 
 </body>
 </html>

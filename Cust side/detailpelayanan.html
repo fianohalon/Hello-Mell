@@ -21,9 +21,9 @@
         <a href="cetadmin.html">Chat Admin</a>
     </nav>
 
-    <div class="nav-buttons">
-        <a href="login.html">Masuk</a>
-    </div>
+  <div class="nav-buttons" id="navButtons">
+    <a href="login.html" class="register-btn">Masuk</a>
+</div>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </header>
@@ -200,6 +200,14 @@
 <script>
     function toggleMenu() {
         document.getElementById("navLinks").classList.toggle("show");
+    }
+    let statusLogin = localStorage.getItem("statusLogin");
+    let navButtons = document.getElementById("navButtons");
+
+    if (statusLogin == "true") {
+        navButtons.innerHTML = '<a href="profilpengguna.html" class="register-btn">Profil</a>';
+    } else {
+        navButtons.innerHTML = '<a href="login.html" class="register-btn">Masuk</a>';
     }
 </script>
 

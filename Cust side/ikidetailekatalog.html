@@ -370,9 +370,9 @@ a {
         <a href="cetadmin.html">Chat Admin</a>
     </nav>
 
-    <div class="nav-buttons">
-        <a href="login.html">Masuk</a>
-    </div>
+    <div class="nav-buttons" id="navButtons">
+    <a href="login.html" class="register-btn">Masuk</a>
+</div>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
@@ -433,9 +433,9 @@ a {
                 </p>
             </div>
 
-            <a href="login.html" class="booking-btn">
-                Login untuk Booking
-            </a>
+          <a href="login.html" class="booking-btn" id="bookingButton">
+    Login untuk Booking
+</a>
 
             <a href="ikikatalog.html" class="back-btn">
                 ← Kembali ke Katalog
@@ -619,7 +619,24 @@ function changePhoto(thumbnail) {
 
     thumbnail.classList.add("active");
 }
+ let statusLogin = localStorage.getItem("statusLogin");
+    let navButtons = document.getElementById("navButtons");
 
+    if (statusLogin == "true") {
+        navButtons.innerHTML = '<a href="profilpengguna.html" class="register-btn">Profil</a>';
+    } else {
+        navButtons.innerHTML = '<a href="login.html" class="register-btn">Masuk</a>';
+    }
+    /* TOMBOL BOOKING */
+let bookingButton = document.getElementById("bookingButton");
+
+if (statusLogin == "true") {
+    bookingButton.textContent = "Booking Sekarang";
+    bookingButton.href = "booking.html";
+} else {
+    bookingButton.textContent = "Login untuk Booking";
+    bookingButton.href = "login.html";
+}
 </script>
 
 </body>

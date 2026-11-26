@@ -21,10 +21,9 @@
         <a href="cetadmin.html">Chat Admin</a>
     </nav>
 
-   <div class="nav-buttons">
-        <a href="login.html" class="register-btn">Masuk</a>
-    </div>
-
+ <div class="nav-buttons" id="navButtons">
+    <a href="login.html" class="register-btn">Masuk</a>
+</div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </header>
 
@@ -38,7 +37,7 @@
 <section class="artist-section">
 
     <div class="artist-profile">
-        <img src="image/mbak lana.jpg" alt="Siti Aurelia">
+        <img src="image/gambar pjbl/mbak lana.jpg" alt="Siti Aurelia">
         <h2>Siti Aurelia</h2>
         <p>
             Menghadirkan berbagai desain nail art
@@ -66,7 +65,7 @@
             </div>
 
             <div class="work-card">
-                <img src="image/gambar pjbl/midnight glam.jpg" alt="Elegant Pearl">
+                <img src="image/gambar pjbl/mignight glam.jpg" alt="Elegant Pearl">
                 <h4>Elegant Pearl</h4>
                 <p>100 menit</p>
                 <span>Rp100.000</span>
@@ -102,7 +101,7 @@
         <div class="works-grid">
 
             <div class="work-card">
-                <img src="image/gambar pjbl/midnight glam.jpg" alt="Cherry Pop">
+                <img src="image/gambar pjbl/mignight glam.jpg" alt="Cherry Pop">
                 <h4>Cherry Pop</h4>
                 <p>90 menit</p>
                 <span>Rp90.000</span>
@@ -159,7 +158,7 @@
             </div>
 
             <div class="work-card">
-                <img src="image/gambar pjbl/midnight glam.jpg" alt="Midnight Blue">
+                <img src="image/gambar pjbl/mignight glam.jpg" alt="Midnight Blue">
                 <h4>Midnight Blue</h4>
                 <p>120 menit</p>
                 <span>Rp130.000</span>
@@ -225,6 +224,14 @@
 <script>
     function toggleMenu() {
         document.getElementById("navLinks").classList.toggle("show");
+    }
+     let statusLogin = localStorage.getItem("statusLogin");
+    let navButtons = document.getElementById("navButtons");
+
+    if (statusLogin == "true") {
+        navButtons.innerHTML = '<a href="profilpengguna.html" class="register-btn">Profil</a>';
+    } else {
+        navButtons.innerHTML = '<a href="login.html" class="register-btn">Masuk</a>';
     }
 </script>
 
